@@ -28,6 +28,7 @@
   (check-equal? (pattern? '(lambda (_) _) '(lambda (y) y y y)) #f)
   
   ;; ...
+  (check-equal? (pattern? '(_ ...) '()) '(()))
   (check-equal? (pattern? '(_ ...) '(a)) '(((a))))
   (check-equal? (pattern? '(_ ...) '(a b)) '(((a) (b))))
   (check-equal? (pattern? '(_ ...) '(a b c)) '(((a) (b) (c))))
